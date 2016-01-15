@@ -10,6 +10,13 @@ $(function(){
     $(".cabo").hide();
     $(".sanDiego").hide();
     $(".baja").hide();
+    $(".miami").hide();
+    $(".fiji").hide();
+    $(".tulum").hide();
+    $(".manzanillo").hide();
+    $(".rarotonga").hide();
+    $(".palm").hide();
+    $(".crazy").hide();
 
     if(temp === "yes"){
       if (tourist === "yes"){
@@ -25,14 +32,42 @@ $(function(){
           }else {
             $(".baja").show();
           }
+        }else if(fly === "yes"){
+          if(usa === "yes"){
+            $(".miami").show();
+          }else{
+            $(".fiji").show();
+          }
+        }else if (usa === "yes") {
+          $(".miami").show();
         }else {
-          $(".daytona").show();
+          $(".cabo").show();
         }
+      }else if (affordable === "yes") {
+        if(fly === "yes"){
+          if (usa === "yes") {
+            $(".sanDiego").show();
+          }else{
+            $(".tulum").show();
+          }
+        }else if (usa === "yes"){
+          $(".sanDiego").show();
+        }else {
+          $(".manzanillo").show();
+        }
+      }else if (fly === "yes"){
+        if (usa === "yes") {
+          $(".sanDiego").show();
+        }else {
+          $(".rarotonga").show();
+        }
+      }else if (usa === "yes"){
+        $(".palm").show();
       }else {
-        $(".daytona").show();
+        $(".baja").show();
       }
     }else {
-      $(".daytona").show();
+      $(".crazy").show();
     }
   event.preventDefault();
   })
@@ -41,7 +76,7 @@ $(function(){
 $(function() {
 
   $('#resetButton').on('click', function() {
-    $window.location.reload();
+    location.reload();
     $('img').remove();
   })
 });
